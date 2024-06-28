@@ -23,7 +23,7 @@ class MRUCache(BaseCaching):
             self.cache_data[key] = item
             self.order.append(key)
             if len(self.cache_data) > BaseCaching.MAX_ITEMS:
-                mru_key = self.order.pop(-2)  # remove the second last item added
+                mru_key = self.order.pop(-2)
                 del self.cache_data[mru_key]
                 print("DISCARD: {}".format(mru_key))
 
